@@ -32,7 +32,7 @@ class Deykstra
   end
 
   def adjacency_matr
-    @adjacency_matr ||= File.readlines(ADJACENCY_MATR_PATH).map { |el| JSON.parse(el) }
+    @adjacency_matr ||= File.readlines(ADJACENCY_MATR_PATH).map { |el| el.split(',').map(&:to_i) }
   end
 end
 
